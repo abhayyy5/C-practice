@@ -1050,3 +1050,497 @@ int main() {
     
     return 0;
 }
+
+// 77. Merge two arrays
+#include <iostream>
+using namespace std;
+void mergeArrays() {
+    int a[3], b[3], c[6];
+    for (int i = 0; i < 3; i++) cin >> a[i];
+    for (int i = 0; i < 3; i++) cin >> b[i];
+    
+    // Copy first array
+    for (int i = 0; i < 3; i++) c[i] = a[i];
+    // Copy second array
+    for (int i = 0; i < 3; i++) c[i + 3] = b[i];
+
+    for (int i = 0; i < 6; i++) cout << c[i] << " ";
+    cout << endl;
+}
+
+// 78. Palindrome array
+#include <iostream>
+using namespace std;
+void palindromeArray() {
+    int a[5], flag = 1;
+    for (int i = 0; i < 5; i++) cin >> a[i];
+    for (int i = 0; i <= 5 / 2; i++) {
+        if (a[i] != a[5 - i - 1]) flag = 0;
+    }
+    if (flag) cout << "Palindrome" << endl;
+    else cout << "Not Palindrome" << endl;
+}
+
+// 79. Left rotate array
+#include <iostream>
+using namespace std;
+void leftRotate() {
+    int a[5], temp;
+    for (int i = 0; i < 5; i++) cin >> a[i];
+    temp = a[0];
+    for (int i = 0; i < 4; i++) {
+        a[i] = a[i + 1];
+    }
+    a[4] = temp;
+    for (int i = 0; i < 5; i++) cout << a[i] << " ";
+}
+
+// 80. Remove duplicates
+#include <iostream>
+using namespace std;
+void removeDuplicates() {
+    int a[5], n = 5;
+    for (int i = 0; i < 5; i++) cin >> a[i];
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (a[i] == a[j]) {
+                for (int k = j; k < n - 1; k++) {
+                    a[k] = a[k + 1];
+                }
+                n--;
+                j--;
+            }
+        }
+    }
+    for (int i = 0; i < n; i++) cout << a[i] << " ";
+}
+
+// 81. Hollow square
+#include <iostream>
+using namespace std;
+void hollowSquare() {
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= 5; j++) {
+            if (i == 1 || i == 5 || j == 1 || j == 5) cout << "* ";
+            else cout << "  ";
+        }
+        cout << endl;
+    }
+}
+
+// 82. 0-1 pattern
+#include <iostream>
+using namespace std;
+void zeroOnePattern() {
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= i; j++) {
+            if ((i + j) % 2 == 0) cout << "1 ";
+            else cout << "0 ";
+        }
+        cout << endl;
+    }
+}
+
+// 83. Pascal Pattern
+#include <iostream>
+using namespace std;
+void pascalPattern() {
+    for (int i = 0; i < 5; i++) {
+        int num = 1;
+        for (int j = 0; j <= i; j++) {
+            cout << num << " ";
+            num = num * (i - j) / (j + 1);
+        }
+        cout << endl;
+    }
+}
+
+// 84. Right aligned triangle
+#include <iostream>
+using namespace std;
+void rightAlignedTriangle() {
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= 5 - i; j++) cout << "  ";
+        for (int j = 1; j <= i; j++) cout << "* ";
+        cout << endl;
+    }
+}
+
+// 85. Number pyramid
+#include <iostream>
+using namespace std;
+void numberPyramid() {
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= 5 - i; j++) cout << " ";
+        for (int j = 1; j <= i; j++) cout << i << " ";
+        cout << endl;
+    }
+}
+
+// 86. Square numbers
+#include <iostream>
+using namespace std;
+void squareNumbers() {
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= 5; j++) cout << j << " ";
+        cout << endl;
+    }
+}
+
+// 87. Reverse number triangle
+#include <iostream>
+using namespace std;
+void reverseNumTriangle() {
+    for (int i = 5; i >= 1; i--) {
+        for (int j = 1; j <= i; j++) cout << j << " ";
+        cout << endl;
+    }
+}
+
+// 88. Alphabet same row
+#include <iostream>
+using namespace std;
+void alphabetSameRow() {
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) cout << (char)('A' + i) << " ";
+        cout << endl;
+    }
+}
+
+// 89. Star with Spaces triangle
+#include <iostream>
+using namespace std;
+void starSpacesTriangle() {
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= i; j++) cout << "* ";
+        cout << endl;
+    }
+}
+
+// 90. Hollow triangle
+#include <iostream>
+using namespace std;
+void hollowTriangle() {
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= i; j++) {
+            if (j == 1 || j == i || i == 5) cout << "* ";
+            else cout << "  ";
+        }
+        cout << endl;
+    }
+}
+
+// 91. Increasing alphabet triangle
+#include <iostream>
+using namespace std;
+void incAlphaTriangle() {
+    for (int i = 1; i <= 5; i++) {
+        char ch = 'A';
+        for (int j = 1; j <= i; j++) cout << ch++ << " ";
+        cout << endl;
+    }
+}
+
+// 92. Reverse alphabet triangle
+void revAlphaTriangle() {
+    for (int i = 5; i >= 1; i--) {
+        char ch = 'A';
+        for (int j = 1; j <= i; j++) cout << ch++ << " ";
+        cout << endl;
+    }
+}
+
+// 93. Number constant triangle
+#include <iostream>
+using namespace std;
+void numConstantTriangle() {
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= i; j++) cout << "5 ";
+        cout << endl;
+    }
+}
+
+// 94. Alternating star pattern
+#include <iostream>
+using namespace std;
+void alternatingStarPattern() {
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= 5; j++) {
+            if ((i + j) % 2 == 0) cout << "* ";
+            else cout << "  ";
+        }
+        cout << endl;
+    }
+}
+
+// 95. Right shifted triangle
+#include <iostream>
+using namespace std;
+void rightShiftedTriangle() {
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 1; j <= i - 1; j++) cout << "  ";
+        for (int j = 1; j <= 6 - i; j++) cout << "* ";
+        cout << endl;
+    }
+}
+
+// 96. Average of array
+#include <iostream>
+using namespace std;
+void averageOfArray() {
+    int a[5], sum = 0;
+    for (int i = 0; i < 5; i++) cin >> a[i];
+    for (int i = 0; i < 5; i++) sum += a[i];
+    cout << "Average = " << sum / 5.0 << endl;
+}
+
+// 97. Count positive numbers
+#include <iostream>
+using namespace std;
+void countPositive() {
+    int a[5], count = 0;
+    for (int i = 0; i < 5; i++) cin >> a[i];
+    for (int i = 0; i < 5; i++) {
+        if (a[i] > 0) count++;
+    }
+    cout << "Positive = " << count << endl;
+}
+
+// 98. Multiply all elements
+#include <iostream>
+using namespace std;
+void multiplyArray() {
+    int a[5], mul = 1;
+    for (int i = 0; i < 5; i++) cin >> a[i];
+    for (int i = 0; i < 5; i++) mul *= a[i];
+    cout << "Product = " << mul << endl;
+}
+
+// 99. Print alternate elements
+#include <iostream>
+using namespace std;
+void alternateElements() {
+    int a[5];
+    for (int i = 0; i < 5; i++) cin >> a[i];
+    for (int i = 0; i < 5; i += 2) cout << a[i] << " ";
+}
+
+// 100. Check sorted or not
+#include <iostream>
+using namespace std;
+void checkSorted() {
+    int a[5], flag = 1;
+    for (int i = 0; i < 5; i++) cin >> a[i];
+    for (int i = 0; i < 4; i++) {
+        if (a[i] > a[i+1]) flag = 0;
+    }
+    if (flag) cout << "Sorted" << endl;
+    else cout << "Not Sorted" << endl;
+}
+
+// 101. Replace negative with zero
+#include <iostream>
+using namespace std;
+void replaceNegative() {
+    int a[5];
+    for (int i = 0; i < 5; i++) cin >> a[i];
+    for (int i = 0; i < 5; i++) {
+        if (a[i] < 0) a[i] = 0;
+    }
+    for (int i = 0; i < 5; i++) cout << a[i] << " ";
+}
+
+// 102. Find index of element
+#include <iostream>
+using namespace std;
+void findIndex() {
+    int a[5], key;
+    for (int i = 0; i < 5; i++) cin >> a[i];
+    cout << "Enter key: "; cin >> key;
+    for (int i = 0; i < 5; i++) {
+        if (a[i] == key) cout << "Index = " << i;
+    }
+}
+
+// 103. Add two arrays
+#include <iostream>
+using namespace std;
+void addTwoArrays() {
+    int a[5], b[5], c[5];
+    for (int i = 0; i < 5; i++) cin >> a[i];
+    for (int i = 0; i < 5; i++) cin >> b[i];
+    for (int i = 0; i < 5; i++) {
+        c[i] = a[i] + b[i];
+        cout << c[i] << " ";
+    }
+}
+
+// 104. Count Zeros
+#include <iostream>
+using namespace std;
+void countZeros() {
+    int a[5], count = 0;
+    for (int i = 0; i < 5; i++) cin >> a[i];
+    for (int i = 0; i < 5; i++) {
+        if (a[i] == 0) count++;
+    }
+    cout << "Zeros = " << count << endl;
+}
+
+// 106. Display only first node
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+void displayFirst() {
+    Node* head = new Node();
+    head->data = 10;
+    head->next = NULL;
+    cout << head->data;
+}
+
+// 107. Two node creation
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+void twoNodeCreation() {
+    Node* n1 = new Node();
+    Node* n2 = new Node();
+    n1->data = 1; n1->next = n2;
+    n2->data = 2; n2->next = NULL;
+    cout << n1->data << " -> " << n2->data;
+}
+
+// 108. Traverse manually (3 nodes)
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+void traverseManual() {
+    Node* n1 = new Node();
+    Node* n2 = new Node();
+    Node* n3 = new Node();
+    n1->data = 5; n1->next = n2;
+    n2->data = 10; n2->next = n3;
+    n3->data = 15; n3->next = NULL;
+
+    Node* temp = n1;
+    while (temp != NULL) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+}
+
+// 110. Insert after first node
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+void insertAfterFirst() {
+    Node* n1 = new Node();
+    Node* n3 = new Node();
+    n1->data = 1; n1->next = n3;
+    n3->data = 3; n3->next = NULL;
+
+    Node* n2 = new Node();
+    n2->data = 2;
+    n2->next = n1->next;
+    n1->next = n2;
+}
+
+// 111. Print last node
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+void printLastNode() {
+    Node* a = new Node();
+    Node* b = new Node();
+    Node* c = new Node();
+    a->data = 1; a->next = b;
+    b->data = 2; b->next = c;
+    c->data = 3; c->next = NULL;
+
+    Node* temp = a;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    cout << "Last Node: " << temp->data;
+}
+
+// 112. Single node deletion
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+void deleteNode() {
+    Node* head = new Node();
+    head->data = 10;
+    head->next = NULL;
+    delete head;
+    cout << "Deleted";
+}
+
+// 113. Updated node value
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+void updateNode() {
+    Node* head = new Node();
+    head->data = 10;
+    head->data = 20; // Update
+    cout << head->data;
+}
+
+// 114. Check empty list
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+void checkEmpty() {
+    Node* head = NULL;
+    if (head == NULL) cout << "Empty";
+}
+
+// 115. Create circular link (basic)
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+void createCircular() {
+    Node* a = new Node();
+    Node* b = new Node();
+    a->data = 1; b->data = 2;
+    a->next = b;
+    b->next = a; // Makes it circular
+    cout << "Circular created";
+}
