@@ -2080,3 +2080,108 @@ int main() {
     d.display();
     return 0;
 }
+
+// 146.Student Management System
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    int id;
+    string name;
+    float marks;
+
+public:
+    void input() {
+        cout << "Enter ID: ";
+        cin >> id;
+
+        cout << "Enter Name: ";
+        cin >> name;
+
+        cout << "Enter Marks: ";
+        cin >> marks;
+    }
+
+    void display() {
+        cout << "\nID: " << id;
+        cout << "\nName: " << name;
+        cout << "\nMarks: " << marks;
+    }
+};
+
+int main() {
+    Student s;
+    s.input();
+    s.display();
+    return 0;
+}
+
+// 147.Employee Management System
+#include <iostream>
+using namespace std;
+
+class Employee {
+private:
+    int empId;
+    string name;
+    float salary;
+
+public:
+    void getData() {
+        cout << "Enter Employee ID: ";
+        cin >> empId;
+
+        cout << "Enter Name: ";
+        cin >> name;
+
+        cout << "Enter Salary: ";
+        cin >> salary;
+    }
+
+    void showData() {
+        cout << "\nEmployee ID: " << empId;
+        cout << "\nName: " << name;
+        cout << "\nSalary: " << salary;
+    }
+};
+
+int main() {
+    Employee e;
+    e.getData();
+    e.showData();
+    return 0;
+}
+
+//148.Write to File
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream file("data.txt");
+
+    file << "Hello Abhay";
+
+    file.close();
+
+    cout << "Data written to file";
+    return 0;
+}
+
+//149.Read from File
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ifstream file("data.txt");
+    string text;
+
+    while (getline(file, text)) {
+        cout << text << endl;
+    }
+
+    file.close();
+    return 0;
+} 
