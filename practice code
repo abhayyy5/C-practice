@@ -302,3 +302,346 @@ int main() {
     // Call functions here as needed
     return 0;
 }
+
+// 23. Sum of Array
+#include <iostream>
+#include <string>
+
+using namespace std;
+void sumArray() {
+    int arr[5], sum = 0;
+    for (int i = 0; i < 5; i++) {
+        cin >> arr[i];
+        sum += arr[i];
+    }
+    cout << sum << endl;
+}
+
+// 24. Number Pattern
+#include <iostream>
+#include <string>
+
+using namespace std;
+void numberPattern() {
+    for (int i = 1; i <= 4; i++) {
+        for (int j = 1; j <= i; j++)
+            cout << j;
+        cout << endl;
+    }
+}
+
+// 25. Call by Reference
+#include <iostream>
+#include <string>
+
+using namespace std;
+void swapRef(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+// 26. Compare Two Strings
+#include <iostream>
+#include <string>
+
+using namespace std;
+void compareStrings() {
+    string a, b;
+    cin >> a >> b;
+    if (a == b) cout << "Equal" << endl;
+    else cout << "Not Equal" << endl;
+}
+
+// 27. Subtract Two Numbers
+#include <iostream>
+#include <string>
+
+using namespace std;
+void subtract() {
+    cout << 10 - 4 << endl;
+}
+
+// 28. Square of Number
+#include <iostream>
+#include <string>
+
+using namespace std;
+void square() {
+    int n = 4;
+    cout << n * n << endl;
+}
+
+// 29. Table of 2
+#include <iostream>
+#include <string>
+
+using namespace std;
+void tableOfTwo() {
+    for (int i = 1; i <= 10; i++)
+        cout << 2 * i << " ";
+    cout << endl;
+}
+
+// 30. Star Pattern
+#include <iostream>
+#include <string>
+
+using namespace std;
+void starPattern() {
+    for (int i = 1; i <= 3; i++) {
+        for (int j = 1; j <= i; j++)
+            cout << "* ";
+        cout << endl;
+    }
+}
+
+// 31. Positive or Negative
+#include <iostream>
+#include <string>
+
+using namespace std;
+void checkSign() {
+    int n = -5;
+    if (n >= 0) cout << "Positive" << endl;
+    else cout << "Negative" << endl;
+}
+
+// 32. Even Numbers 1–10
+#include <iostream>
+#include <string>
+
+using namespace std;
+void evenNumbers() {
+    for (int i = 2; i <= 10; i += 2)
+        cout << i << " ";
+    cout << endl;
+}
+
+// 33. Odd Numbers 1–10
+#include <iostream>
+#include <string>
+
+using namespace std;
+void oddNumbers() {
+    for (int i = 1; i <= 10; i += 2)
+        cout << i << " ";
+    cout << endl;
+}
+
+// 34. Function with Pointer
+#include <iostream>
+#include <string>
+
+using namespace std;
+void showVal(int *p) {
+    cout << *p << endl;
+}
+
+// 35. Null Pointer Example
+#include <iostream>
+#include <string>
+
+using namespace std;
+void nullPointerCheck() {
+    int *p = nullptr;
+    if (p == nullptr) cout << "Pointer is NULL" << endl;
+}
+
+// 36. Default Constructor
+#include <iostream>
+#include <string>
+
+using namespace std;
+class DemoConstructor {
+public:
+    DemoConstructor() {
+        cout << "Default Constructor Called" << endl;
+    }
+};
+
+// 37. Parameterized Constructor
+#include <iostream>
+#include <string>
+
+using namespace std;
+class Student {
+    int roll;
+public:
+    Student(int r) { roll = r; }
+    void display() { cout << "Roll = " << roll << endl; }
+};
+
+// 38. Constructor Overloading
+#include <iostream>
+#include <string>
+
+using namespace std;
+class Test {
+public:
+    Test() { cout << "Default" << endl; }
+    Test(int x) { cout << "Parameterized " << x << endl; }
+};
+
+// 39. Copy Constructor
+#include <iostream>
+#include <string>
+
+using namespace std;
+class Sample {
+    int x;
+public:
+    Sample(int a) { x = a; }
+    Sample(const Sample &s) { x = s.x; }
+    void show() { cout << x << endl; }
+};
+
+// 40. Constructor + Destructor
+#include <iostream>
+#include <string>
+
+using namespace std;
+class DemoLifeCycle {
+public:
+    DemoLifeCycle() { cout << "Constructor" << endl; }
+    ~DemoLifeCycle() { cout << "Destructor" << endl; }
+};
+
+// 41. Bank Account
+#include <iostream>
+#include <string>
+
+using namespace std;
+class Bank {
+    int balance;
+public:
+    Bank(int b) { balance = b; }
+    void show() { cout << "Balance = " << balance << endl; }
+};
+
+// 42. Car Constructor
+#include <iostream>
+#include <string>
+
+using namespace std;
+class Car {
+public:
+    Car() { cout << "Car Created" << endl; }
+};
+
+// 43. Multiple Objects
+#include <iostream>
+#include <string>
+
+using namespace std;
+void multipleObjects() {
+    Car c1, c2, c3; // Reusing Car class logic
+}
+
+// 44. ASCII Value
+#include <iostream>
+#include <string>
+
+using namespace std;
+void asciiValue() {
+    char c = 'A';
+    cout << (int)c << endl;
+}
+
+// 45. Largest in Array
+#include <iostream>
+#include <string>
+
+using namespace std;
+void largestArray() {
+    int a[] = {2, 8, 1, 6};
+    int maxVal = a[0];
+    for (int i = 1; i < 4; i++) {
+        if (a[i] > maxVal) maxVal = a[i];
+    }
+    cout << maxVal << endl;
+}
+
+// 46. Swap Without Temp
+#include <iostream>
+#include <string>
+
+using namespace std;
+void swapNoTemp() {
+    int a = 5, b = 10;
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    cout << "a = " << a << " b = " << b << endl;
+}
+
+// 47. String Length
+#include <iostream>
+#include <string>
+
+using namespace std;
+void getStrLen() {
+    string s;
+    cin >> s;
+    cout << s.length() << endl;
+}
+
+// 48. Reverse String
+#include <iostream>
+#include <string>
+
+using namespace std;
+void getRevStr() {
+    string s;
+    cin >> s;
+    for (int i = s.length() - 1; i >= 0; i--)
+        cout << s[i];
+    cout << endl;
+}
+
+// 49. Recursive Factorial
+#include <iostream>
+#include <string>
+
+using namespace std;
+int factorial(int x) {
+    if (x == 0) return 1;
+    return x * factorial(x - 1);
+}
+
+// 50. Sum of Digits (Recursion)
+#include <iostream>
+#include <string>
+
+using namespace std;
+int sumDigitsRec(int x) {
+    if (x == 0) return 0;
+    return x % 10 + sumDigitsRec(x / 10);
+}
+
+// 51. Star Pattern (Duplicate of 30)
+#include <iostream>
+#include <string>
+
+using namespace std;
+void starPatternRepeat() {
+    for (int i = 1; i <= 3; i++) {
+        for (int j = 1; j <= i; j++)
+            cout << "* ";
+        cout << endl;
+    }
+}
+
+// 52. Print Your Name
+#include <iostream>
+#include <string>
+
+using namespace std;
+void printName() {
+    cout << "My name is Abhay" << endl;
+}
+
+int main() {
+    // Calling functions to test
+    return 0;
+}
