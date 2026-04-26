@@ -1544,3 +1544,539 @@ void createCircular() {
     b->next = a; // Makes it circular
     cout << "Circular created";
 }
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+// 116. Bank Account System
+class BankAccount {
+protected:
+    string accountHolder;
+    double balance;
+
+public:
+    // Constructor to initialize account details
+    BankAccount(string name, double initialBalance) 
+        : accountHolder(name), balance(initialBalance) {}
+
+    // Virtual function for polymorphic interest calculation
+    virtual void calculateInterest() {
+        cout << "Generic interest calculation for account.\n";
+    }
+
+    // Method to handle deposits
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            cout << "Deposited: " << amount << ", New Balance: " << balance << endl;
+        } else {
+            cout << "Invalid deposit amount.\n";
+        }
+    }
+};
+
+// 117. Simple Class & Object
+#include <iostream>
+using namespace std;
+class Student {
+public:
+    int age;
+};
+
+int main_117() {
+    Student s;
+    s.age = 20;
+    cout << s.age << endl;
+    return 0;
+}
+
+// 118. Class with Function
+#include <iostream>
+using namespace std;
+class Text {
+public:
+    void show() {
+        cout << "hello" << endl;
+    }
+};
+
+int main_118() {
+    Text t;
+    t.show();
+    return 0;
+}
+
+// 119. Default Constructor Example
+#include <iostream>
+using namespace std;
+class A_119 {
+public:
+    A_119() {
+        cout << "Constructor called" << endl;
+    }
+};
+
+// 120. Parameterized Constructor
+#include <iostream>
+using namespace std;
+class A_120 {
+public:
+    int x;
+    A_120(int a) {
+        x = a;
+    }
+};
+
+// 121. Default Constructor with Value initialization
+#include <iostream>
+using namespace std;
+class A_121 {
+public:
+    int x;
+    A_121() {
+        x = 5;
+    }
+};
+
+int main_constructors() {
+    A_119 obj1;          // Calls default constructor
+    A_120 obj2(10);      // Passes 10 to constructor
+    cout << obj2.x << endl;
+    A_121 obj3;
+    cout << obj3.x << endl;
+    return 0;
+}
+
+// 122. Simple Inheritance (Base to Derived)
+#include <iostream>
+using namespace std;
+class Base {
+public:
+    void show() { cout << "Base Class" << endl; }
+};
+class Derived : public Base {};
+
+// 123. Function Overloading (Static Polymorphism)
+#include <iostream>
+using namespace std;
+class Calc {
+public:
+    void add(int a, int b) {
+        cout << a + b << endl;
+    }
+    void add(int a, int b, int c) {
+        cout << a + b + c << endl;
+    }
+};
+
+// 124. Encapsulation (Private Data + Getters/Setters)
+#include <iostream>
+using namespace std;
+class Account {
+private:
+    int x;
+public:
+    void set(int a) { x = a; }
+    void get() { cout << x << endl; }
+};
+
+// 125. Single Inheritance with Data
+#include <iostream>
+using namespace std;
+class Parent {
+public:
+    int x = 5;
+};
+class Child : public Parent {};
+
+// 126. Multilevel Inheritance
+#include <iostream>
+using namespace std;
+class GrandParent {
+public:
+    void show() { cout << "A" << endl; }
+};
+class Father : public GrandParent {};
+class Son : public Father {};
+
+int main_inheritance() {
+    Son obj;
+    obj.show(); // Accesses GrandParent function through Father
+    return 0;
+}
+
+// 127. 'this' Pointer Example
+#include <iostream>
+using namespace std;
+class ThisDemo {
+public:
+    int x;
+    void set(int x) {
+        // 'this->x' refers to the class variable, 'x' refers to the parameter
+        this->x = x;
+    }
+};
+
+// 128. Friend Function
+#include <iostream>
+using namespace std;
+class Box {
+private:
+    int x = 10;
+    // Declaring external function as a friend to access private data
+    friend void show(Box obj);
+};
+
+void show(Box obj) {
+    cout << "Accessing private data: " << obj.x << endl;
+}
+
+int main_oop_final() {
+    Account acc;
+    acc.set(10);
+    acc.get();
+
+    Box b;
+    show(b);
+
+    return 0;
+}
+
+// 129. Static Variable
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+    static int n; // Declaration of static member
+};
+
+int A::n = 5; // Definition and initialization
+
+int main() {
+    cout << "Static variable n: " << A::n << endl;
+    return 0;
+}
+
+// 130. Inline Function
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+    inline void show() {
+        cout << "This is an inline function call." << endl;
+    }
+};
+
+int main() {
+    A obj;
+    obj.show();
+    return 0;
+}
+
+// 131. Objects as Arguments
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+    int n;
+};
+
+void display(A obj) {
+    cout << "Value of n passed as object: " << obj.n << endl;
+}
+
+int main() {
+    A obj;
+    obj.n = 10;
+    display(obj);
+    return 0;
+}
+
+// 132. Simple Class and Object (Car)
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Car {
+public:
+    string brand;
+};
+
+int main() {
+    Car obj;
+    obj.brand = "Toyota";
+    cout << "Car Brand: " << obj.brand << endl;
+    return 0;
+}
+
+// 133. Class Member Function
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    void show() {
+        cout << "Hello Student, welcome to C++ OOP!" << endl;
+    }
+};
+
+int main() {
+    Student s;
+    s.show();
+    return 0;
+}
+
+//134. Encapsulation (Private Data Members)
+#include <iostream>
+using namespace std;
+
+class Demo {
+private:
+    int x; // Data hidden from outside
+public:
+    void setX(int a) {
+        x = a;
+    }
+    void getX() {
+        cout << "Value of x: " << x << endl;
+    }
+};
+
+int main() {
+    Demo obj;
+    obj.setX(100);
+    obj.getX();
+    return 0;
+}
+
+// 135. Data Hiding (Bank Example)
+#include <iostream>
+using namespace std;
+
+class Bank {
+private:
+    int balance;
+public:
+    void deposit() {
+        balance = 1000;
+    }
+    void show() {
+        cout << "Current Balance: " << balance << endl;
+    }
+};
+
+int main() {
+    Bank b;
+    b.deposit();
+    b.show();
+    return 0;
+}
+
+// 136. Abstraction using Class
+#include <iostream>
+using namespace std;
+
+class Car {
+public:
+    void start() {
+        cout << "Car engine started... implementation hidden." << endl;
+    }
+};
+
+int main() {
+    Car myCar;
+    myCar.start();
+    return 0;
+}
+
+// 137. Abstraction (Pure Virtual Function)
+#include <iostream>
+using namespace std;
+
+class Shape {
+public:
+    virtual void draw() = 0; // Pure virtual function (Abstraction)
+};
+
+class Circle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing a Circle." << endl;
+    }
+};
+
+int main() {
+    Circle c;
+    c.draw();
+    return 0;
+}
+
+// 138. Single Inheritance
+#include <iostream>
+using namespace std;
+
+class Parent {
+public:
+    void show() {
+        cout << "This is the Parent class." << endl;
+    }
+};
+
+class Child : public Parent { };
+
+int main() {
+    Child obj;
+    obj.show(); // Accessing parent method
+    return 0;
+}
+
+// 139. Multilevel Inheritance
+#include <iostream>
+using namespace std;
+
+class A { public: void showA() { cout << "Class A" << endl; } };
+class B : public A { };
+class C : public B { };
+
+int main() {
+    C obj;
+    obj.showA(); // C inherits from B, B inherits from A
+    return 0;
+}
+
+// 140. Multiple Inheritance
+#include <iostream>
+using namespace std;
+
+class Parent1 { public: int a = 10; };
+class Parent2 { public: int b = 20; };
+
+class Child : public Parent1, public Parent2 {
+public:
+    void sum() {
+        cout << "Sum from two parents: " << a + b << endl;
+    }
+};
+
+int main() {
+    Child obj;
+    obj.sum();
+    return 0;
+}
+
+// 141. Hierarchical Inheritance
+#include <iostream>
+using namespace std;
+
+class Father {
+public:
+    void showF() { cout << "I am the Father." << endl; }
+};
+
+class Son1 : public Father { };
+class Son2 : public Father { };
+
+int main() {
+    Son1 s1;
+    Son2 s2;
+    s1.showF();
+    s2.showF();
+    return 0;
+}
+
+// 142. Polymorphism (Function Overloading)
+#include <iostream>
+using namespace std;
+
+class Poly {
+public:
+    void add(int a, int b) {
+        cout << "Sum of 2: " << a + b << endl;
+    }
+    void add(int a, int b, int c) {
+        cout << "Sum of 3: " << a + b + c << endl;
+    }
+};
+
+int main() {
+    Poly obj;
+    obj.add(5, 10);
+    obj.add(5, 10, 15);
+    return 0;
+}
+
+// 143. Operator Overloading
+#include <iostream>
+using namespace std;
+
+class Demo {
+public:
+    int x;
+    Demo operator+(Demo &obj) {
+        Demo temp;
+        temp.x = x + obj.x;
+        return temp;
+    }
+};
+
+int main() {
+    Demo d1, d2, d3;
+    d1.x = 10;
+    d2.x = 20;
+    d3 = d1 + d2; // Calls overloaded +
+    cout << "Result of operator overloading: " << d3.x << endl;
+    return 0;
+}
+
+// 144. Function Overriding (Late Binding)
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    virtual void show() {
+        cout << "Base Class Output" << endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override {
+        cout << "Derived Class Output (Overridden)" << endl;
+    }
+};
+
+int main() {
+    Base* ptr;
+    Derived obj;
+    ptr = &obj;
+    ptr->show(); // Calls Derived version due to virtual keyword
+    return 0;
+}
+
+//145. Abstract Class & Pure Virtual Function
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    virtual void display() = 0; // Pure virtual function
+};
+
+class Derived : public Base {
+public:
+    void display() override {
+        cout << "Implementation of abstract method." << endl;
+    }
+};
+
+int main() {
+    Derived d;
+    d.display();
+    return 0;
+}
