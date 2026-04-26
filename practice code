@@ -67,3 +67,238 @@ int main() {
 
     return 0;
 }
+
+// 6. Print 1 to 10
+#include <iostream>
+#include <string>
+
+using namespace std;
+void print1to10() {
+    for (int i = 1; i <= 10; i++)
+        cout << i << " ";
+    cout << endl;
+}
+
+// 7. Factorial (Loop)
+#include <iostream>
+#include <string>
+
+using namespace std;
+void factorialLoop() {
+    int n, f = 1;
+    cout << "Enter number: ";
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+        f *= i;
+    cout << f << endl;
+}
+
+// 8. Prime Number
+#include <iostream>
+#include <string>
+
+using namespace std;
+void checkPrime() {
+    int n, count = 0;
+    cout << "Enter number: ";
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+        if (n % i == 0)
+            count++;
+    if (count == 2)
+        cout << "Prime" << endl;
+    else
+        cout << "Not Prime" << endl;
+}
+
+// 9. Reverse Number
+#include <iostream>
+#include <string>
+
+using namespace std;
+void reverseNumber() {
+    int n, rev = 0, r;
+    cout << "Enter number: ";
+    cin >> n;
+    while (n > 0) {
+        r = n % 10;
+        rev = rev * 10 + r;
+        n /= 10;
+    }
+    cout << rev << endl;
+}
+
+// 10. Sum of Digits
+#include <iostream>
+#include <string>
+
+using namespace std;
+void sumOfDigits() {
+    int n, sum = 0;
+    cout << "Enter number: ";
+    cin >> n;
+    while (n > 0) {
+        sum += n % 10;
+        n /= 10;
+    }
+    cout << sum << endl;
+}
+
+// 11. Largest Element in Array
+#include <iostream>
+#include <string>
+
+using namespace std;
+void largestElement() {
+    int arr[5], max;
+    cout << "Enter 5 elements: ";
+    for (int i = 0; i < 5; i++)
+        cin >> arr[i];
+    max = arr[0];
+    for (int i = 1; i < 5; i++)
+        if (arr[i] > max)
+            max = arr[i];
+    cout << max << endl;
+}
+
+// 13. String Length
+#include <iostream>
+#include <string>
+
+using namespace std;
+void stringLength() {
+    string s;
+    cout << "Enter string: ";
+    cin >> s;
+    cout << s.length() << endl;
+}
+
+// 14. Reverse String
+#include <iostream>
+#include <string>
+
+using namespace std;
+void reverseString() {
+    string s;
+    cout << "Enter string: ";
+    cin >> s;
+    for (int i = s.length() - 1; i >= 0; i--)
+        cout << s[i];
+    cout << endl;
+}
+
+// 15. Function to Add
+#include <iostream>
+#include <string>
+
+using namespace std;
+int add(int a, int b) {
+    return a + b;
+}
+
+// 16. Recursive Factorial
+#include <iostream>
+#include <string>
+
+using namespace std;
+int fact(int n) {
+    if (n == 0)
+        return 1;
+    return n * fact(n - 1);
+}
+
+// 17. Multiplication Table
+#include <iostream>
+#include <string>
+
+using namespace std;
+void table() {
+    int n;
+    cout << "Enter number: ";
+    cin >> n;
+    for (int i = 1; i <= 10; i++)
+        cout << n << " x " << i << " = " << n * i << endl;
+}
+
+// 18. Palindrome Number
+#include <iostream>
+#include <string>
+
+using namespace std;
+void palindrome() {
+    int n, rev = 0, temp, r;
+    cout << "Enter number: ";
+    cin >> n;
+    temp = n;
+    while (n > 0) {
+        r = n % 10;
+        rev = rev * 10 + r;
+        n /= 10;
+    }
+    if (temp == rev)
+        cout << "Palindrome" << endl;
+    else
+        cout << "Not Palindrome" << endl;
+}
+
+// 19. Count Digits
+#include <iostream>
+#include <string>
+
+using namespace std;
+void countDigits() {
+    int n, count = 0;
+    cout << "Enter number: ";
+    cin >> n;
+    while (n > 0) {
+        count++;
+        n /= 10;
+    }
+    cout << count << endl;
+}
+
+// 20. Sum of First n Numbers
+#include <iostream>
+#include <string>
+
+using namespace std;
+void sumN() {
+    int n, sum = 0;
+    cout << "Enter n: ";
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+        sum += i;
+    cout << sum << endl;
+}
+
+// 21. Area of Circle
+#include <iostream>
+#include <string>
+
+using namespace std;
+void areaCircle() {
+    float r;
+    cout << "Enter radius: ";
+    cin >> r;
+    cout << 3.14 * r * r << endl;
+}
+
+// 22. Leap Year
+#include <iostream>
+#include <string>
+
+using namespace std;
+void leapYear() {
+    int y;
+    cout << "Enter year: ";
+    cin >> y;
+    if ((y % 4 == 0 && y % 100 != 0) || y % 400 == 0)
+        cout << "Leap Year" << endl;
+    else
+        cout << "Not Leap Year" << endl;
+}
+
+int main() {
+    // Call functions here as needed
+    return 0;
+}
