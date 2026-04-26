@@ -26,8 +26,7 @@ gcc filename.c -o output
 
 ## 👨‍💻 Author
 
-Abhay
+Abhay Kushwaha
 
 ---
 
-⭐ Star this repo if you like it!
