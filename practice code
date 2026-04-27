@@ -2185,3 +2185,24 @@ int main() {
     file.close();
     return 0;
 } 
+
+// 150.Program to take input from user and store it in a file.
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream file("user.txt");
+    string name;
+
+    cout << "Enter your name: ";
+    cin >> name;
+
+    file << name;
+
+    file.close();
+
+    cout << "Data stored in file";
+
+    return 0;
+}
